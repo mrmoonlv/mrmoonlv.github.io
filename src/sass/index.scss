@@ -21,7 +21,6 @@ body {
   header {
     margin-top: $header_height;
     img#logo {
-
       width: 80%;
       max-width: rem(350px);
       margin: 0 auto;
@@ -89,36 +88,7 @@ body {
     @include display(flex);
     @include align-items(center);
     font-family: $font-rasa;
-    min-height: 30vh;
-    /* ----------- iPad Pro ----------- */
-    /* Portrait and Landscape */
-    @media only screen
-    and (min-device-width: 1024px)
-    and (max-device-width: 1366px)
-    and (-webkit-min-device-pixel-ratio: 1.5) {
-      min-height: 30vh;
-    }
-
-    /* Portrait */
-    @media only screen
-    and (min-device-width: 1024px)
-    and (max-device-width: 1366px)
-    and (orientation: portrait)
-    and (-webkit-min-device-pixel-ratio: 1.5) {
-      min-height: 30vh;
-    }
-
-    /* Landscape */
-    @media only screen
-    and (min-device-width: 1024px)
-    and (max-device-width: 1366px)
-    and (orientation: landscape)
-    and (-webkit-min-device-pixel-ratio: 1.5) {
-      min-height: 30vh;
-    }
-
-
-
+    min-height: 400px;
     .row {
       @include respond-to(medium){
         padding-left: 10%;
@@ -193,24 +163,12 @@ body {
 
   section#features {
     min-height: 400px;
-    bottom: 0;
-    width: 100%;
     background-image: url(../images/footer-bg.svg);
     background-size: cover;
     @include display(flex);
     @include align-items(flex-end);
     padding-bottom: 50px;
 
-    @include respond-to(large){
-      position: fixed;
-    }
-
-
-    .row {
-      margin-top: 60px;
-      @include respond-to(medium){
-        margin-top: 0px;
-      }
       div.feature {
 
         margin: 2rem 0;
@@ -230,4 +188,3 @@ body {
       }
     }
   }
-}
