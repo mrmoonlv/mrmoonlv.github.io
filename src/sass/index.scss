@@ -1,0 +1,233 @@
+html {
+  font-size: 12px;
+}
+
+a, h1, h2, h3 {
+  color: $color-grey;
+}
+
+a:hover {
+  color: $color-grey;
+  text-decoration: none;
+  @include transition(color 200ms ease-in-out);
+}
+
+body {
+  font-family: $font-roboto;
+  font-weight: $font-weight-normal;
+  background: url(../images/bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+
+  header {
+    margin-top: $header_height;
+    img#logo {
+
+      width: 80%;
+      max-width: rem(350px);
+      margin: 0 auto;
+      display: block;
+      margin-bottom: $header_height;
+    }
+
+    div.phone, div.email {
+      margin-top: 16px;
+      a {
+        letter-spacing: rem(5px);
+        line-height: $header_height;
+        font-size: 1.5rem;
+
+        @include respond-to(medium){
+          &:before {
+            position: absolute;
+            content: "";
+            width: rem(40px);
+            height: rem(40px);
+            top: rem(36px);
+          }
+        }
+      }
+    }
+
+    @include respond-to(medium){
+      .phone {
+        a {
+          &:before {
+            background: url(../images/webspace-phone-icon.svg) no-repeat left center;
+            left: rem(45px);
+          }
+        }
+      }
+      .email {
+        a {
+          &:before {
+            background: url(../images/webspace-mail-icon.svg) no-repeat left center;
+            left: rem(15px);
+          }
+        }
+      }
+    }
+    @include respond-to(large){
+      .phone {
+        a {
+          &:before {
+            left: rem(90px);
+          }
+        }
+      }
+      .email {
+        a {
+          &:before {
+            left: rem(50px);
+          }
+        }
+      }
+    }
+    margin-bottom: rem(100px);
+  }
+
+  section#hello {
+    @include display(flex);
+    @include align-items(center);
+    font-family: $font-rasa;
+    min-height: 30vh;
+    /* ----------- iPad Pro ----------- */
+    /* Portrait and Landscape */
+    @media only screen
+    and (min-device-width: 1024px)
+    and (max-device-width: 1366px)
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+      min-height: 30vh;
+    }
+
+    /* Portrait */
+    @media only screen
+    and (min-device-width: 1024px)
+    and (max-device-width: 1366px)
+    and (orientation: portrait)
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+      min-height: 30vh;
+    }
+
+    /* Landscape */
+    @media only screen
+    and (min-device-width: 1024px)
+    and (max-device-width: 1366px)
+    and (orientation: landscape)
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+      min-height: 30vh;
+    }
+
+
+
+    .row {
+      @include respond-to(medium){
+        padding-left: 10%;
+        width: 90%;
+        margin-bottom: 5rem;
+      }
+
+      #title {
+        @include respond-to(320px){
+          &:before {
+            background: url(../images/webspace-text-bg.svg) no-repeat left center;
+            background-color: transparent;
+            position: absolute;
+            content: "";
+            width: rem(240px);
+            height: rem(240px);
+            top: rem(-80px);
+            left: rem(5px);
+            right: 0;
+            margin: auto;
+
+            @include respond-to(medium){
+              left: 0;
+              margin: 0;
+              margin-left: 3.5rem;
+            }
+          }
+        }
+
+        h1 {
+          font-family: inherit;
+          max-width: 280px;
+          display: block;
+          margin: 0 auto;
+          text-align: center;
+          font-size: 3rem;
+
+          @include respond-to(medium){
+            text-align: left;
+            max-width: 100%;
+            font-size: 4rem;
+          }
+
+          @include respond-to(320px){
+            margin-bottom: 2rem;
+          }
+
+          @include respond-to(small){
+            margin-bottom: 0;
+          }
+
+        }
+
+        h2 {
+          font-family: inherit;
+          text-align: center;
+          font-weight: $font-weight-light;
+          letter-spacing: rem(5px);
+          @include respond-to(320px){
+            margin-top: 5rem;
+          }
+
+          @include respond-to(medium){
+            font-size: 2rem;
+            margin-top: 1rem;
+            margin-left: rem(-250px);
+          }
+        }
+      }
+    }
+  }
+
+  section#features {
+    min-height: 400px;
+    bottom: 0;
+    width: 100%;
+    background-image: url(../images/footer-bg.svg);
+    background-size: cover;
+    @include display(flex);
+    @include align-items(flex-end);
+    padding-bottom: 50px;
+
+    @include respond-to(large){
+      position: fixed;
+    }
+
+
+    .row {
+      margin-top: 60px;
+      @include respond-to(medium){
+        margin-top: 0px;
+      }
+      div.feature {
+
+        margin: 2rem 0;
+        text-align: center;
+        img {
+          width: 120px;
+        }
+
+        h3 {
+          color: $color-white;
+          font-weight: 500;
+          font-size: 1.5rem;
+          line-height: 2rem;
+          letter-spacing: rem(5px);
+          margin-top: rem(20px);
+        }
+      }
+    }
+  }
+}

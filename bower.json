@@ -1,0 +1,19 @@
+{
+  "name": "html_skeleton",
+  "version": "1.0.0",
+  "authors": [
+    "K.Millers <karlis@karlisweb.me>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bourbon": "~4.2.6",
+    "bootstrap": "v4.0.0-alpha.6"
+  }
+}

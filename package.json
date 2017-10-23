@@ -1,0 +1,31 @@
+{
+  "name": "html_skeleton",
+  "version": "1.0.0",
+  "description": "Lightweight starter for html projects",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrmoonlv/html_skeleton.git"
+  },
+  "keywords": [
+    "HTML Skeleton"
+  ],
+  "author": "K. Millers <karlis@karlisweb.me>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-sass": "^2.0.4"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-strip-comments": "^2.4.5",
+    "gulp-uglify": "^2.1.2",
+    "gulp-util": "^3.0.6"
+  }
+}
