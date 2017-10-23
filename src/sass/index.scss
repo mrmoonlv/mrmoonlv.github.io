@@ -36,12 +36,17 @@ body {
         font-size: 1.5rem;
 
         @include respond-to(medium){
+
+          float: left;
+          margin-left: 20px;
+
           &:before {
             position: absolute;
             content: "";
             width: rem(40px);
             height: rem(40px);
             top: rem(36px);
+            left: 0;
           }
         }
       }
@@ -52,7 +57,6 @@ body {
         a {
           &:before {
             background: url(../images/webspace-phone-icon.svg) no-repeat left center;
-            left: rem(45px);
           }
         }
       }
@@ -60,23 +64,6 @@ body {
         a {
           &:before {
             background: url(../images/webspace-mail-icon.svg) no-repeat left center;
-            left: rem(15px);
-          }
-        }
-      }
-    }
-    @include respond-to(large){
-      .phone {
-        a {
-          &:before {
-            left: rem(90px);
-          }
-        }
-      }
-      .email {
-        a {
-          &:before {
-            left: rem(50px);
           }
         }
       }
