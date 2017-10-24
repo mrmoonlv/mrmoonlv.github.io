@@ -74,7 +74,7 @@ body {
   section#hello {
     @include display(flex);
     @include align-items(center);
-    min-height: 400px;
+    min-height: 272px;
     .row {
       @include respond-to(medium){
         padding-left: 10%;
@@ -154,20 +154,27 @@ body {
     @include align-items(flex-end);
     padding-bottom: 50px;
 
-      div.feature {
-
-        margin: 2rem 0;
-        text-align: center;
-        img {
-          width: 120px;
+      div.row {
+        &:first-child {
+          margin-top: 5rem;
+          @include respond-to(medium){
+            margin-top: 0;
+          }
         }
 
-        h3 {
-          color: $color-white;
-          font-size: 1.5rem;
-          line-height: 2rem;
-          letter-spacing: rem(5px);
-          margin-top: rem(20px);
+        div.feature {
+          margin: 2rem 0;
+          text-align: center;
+          img {
+            width: 120px;
+          }
+          h3 {
+            color: $color-white;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            letter-spacing: rem(5px);
+            margin-top: rem(20px);
+          }
         }
       }
     }
