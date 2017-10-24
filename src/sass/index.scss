@@ -7,7 +7,7 @@ a, h1, h2, h3 {
 }
 
 a:hover {
-  color: $color-grey;
+  color: $color-white;
   text-decoration: none;
   @include transition(color 200ms ease-in-out);
 }
@@ -74,7 +74,6 @@ body {
   section#hello {
     @include display(flex);
     @include align-items(center);
-    font-family: $font-rasa;
     min-height: 400px;
     .row {
       @include respond-to(medium){
@@ -111,12 +110,13 @@ body {
           display: block;
           margin: 0 auto;
           text-align: center;
-          font-size: 3rem;
+          font-size: 2rem;
+          letter-spacing: rem(5Spx);
 
           @include respond-to(medium){
             text-align: left;
             max-width: 100%;
-            font-size: 4rem;
+            font-size: 3rem;
           }
 
           @include respond-to(320px){
@@ -126,22 +126,20 @@ body {
           @include respond-to(small){
             margin-bottom: 0;
           }
-
         }
 
         h2 {
           font-family: inherit;
           text-align: center;
-          font-weight: $font-weight-light;
-          letter-spacing: rem(5px);
+          letter-spacing: rem(6px);
           @include respond-to(320px){
-            margin-top: 5rem;
+            margin-top: 5em;
           }
 
           @include respond-to(medium){
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin-top: 1rem;
-            margin-left: rem(-250px);
+            margin-left: rem(-300px);
           }
         }
       }
@@ -166,7 +164,6 @@ body {
 
         h3 {
           color: $color-white;
-          font-weight: 500;
           font-size: 1.5rem;
           line-height: 2rem;
           letter-spacing: rem(5px);
