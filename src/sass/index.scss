@@ -1,4 +1,6 @@
 html {
+  font-family: $font-roboto;
+  font-weight: $font-weight-normal;
   font-size: 12px;
 }
 
@@ -13,8 +15,6 @@ a:hover {
 }
 
 body {
-  font-family: $font-roboto;
-  font-weight: $font-weight-normal;
   background: url(../images/bg.jpg) no-repeat center center fixed;
   background-size: cover;
 
@@ -99,7 +99,7 @@ body {
             @include respond-to(medium){
               left: 0;
               margin: 0;
-              margin-left: 3.5rem;
+              margin-left: rem(32px);
             }
           }
         }
@@ -139,7 +139,7 @@ body {
           @include respond-to(medium){
             font-size: 1.5rem;
             margin-top: 1rem;
-            margin-left: rem(-300px);
+            margin-left: rem(-280px);
           }
         }
       }

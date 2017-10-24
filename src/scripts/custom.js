@@ -1,1 +1,5 @@
-console.log('OK!');
+WebFont.load({
+    google: {
+        families: ['Roboto:400']
+    }
+});

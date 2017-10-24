@@ -6,6 +6,7 @@ var uglify = require('gulp-uglify');
 var strip = require('gulp-strip-comments');
 var browserSync = require('browser-sync').create();
 var notify = require("gulp-notify");
+var inlineCss = require('gulp-inline-css');
 
 var rootDir = './';
 var srcDir = './src/';
@@ -16,7 +17,8 @@ var sources = {
     jsSources:[
         srcDir+'bower_components/jquery/dist/jquery.min.js',
         srcDir+'bower_components/tether/dist/js/tether.min.js',
-        srcDir+'/bower_components/bootstrap/dist/js/bootstrap.min.js',
+        srcDir+'bower_components/bootstrap/dist/js/bootstrap.min.js',
+        srcDir+'bower_components/bower-webfontloader/webfont.js',
         srcDir+'scripts/*.js'
     ],
     css : rootDir + 'assets/css/style.min.css'
@@ -43,7 +45,7 @@ gulp.task('serve', ['sass'], function() {
 gulp.task('sass', function() {
     gulp.src(sources.sass)
         .pipe(sass().on('error', onError))
-        .pipe(minify({keepBreaks: false}))
+        .pipe(minify({keepBreaks: false, keepSpecialComments: "0"}))
         .pipe(concat(sources.css))
         .pipe(gulp.dest('.'))
         .pipe(browserSync.stream())
