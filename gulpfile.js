@@ -6,7 +6,7 @@ var uglify = require('gulp-uglify');
 var strip = require('gulp-strip-comments');
 var browserSync = require('browser-sync').create();
 var notify = require("gulp-notify");
-var inlineCss = require('gulp-inline-css');
+var htmlmin = require('gulp-htmlmin');
 
 var rootDir = './';
 var srcDir = './src/';
@@ -19,6 +19,7 @@ var sources = {
         srcDir+'bower_components/tether/dist/js/tether.min.js',
         srcDir+'bower_components/bootstrap/dist/js/bootstrap.min.js',
         srcDir+'bower_components/bower-webfontloader/webfont.js',
+        srcDir+'bower_components/jquery-validation/dist/jquery.validate.js',
         srcDir+'scripts/*.js'
     ],
     css : rootDir + 'assets/css/style.min.css'
@@ -69,6 +70,12 @@ gulp.task('scripts', function () {
             "icon":  __dirname  + "/src/images/gulp.png", // case sensitive
             "onLast": true
         }));
+});
+
+gulp.task('minify', function() {
+    return gulp.src('./src/index.html')
+        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest('./'));
 });
 
 gulp.task('default', ['sass', 'scripts', 'serve']);
