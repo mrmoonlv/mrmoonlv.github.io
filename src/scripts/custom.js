@@ -30,14 +30,14 @@ jQuery(document).ready(function($){
 
             $.ajax({
                 type: 'POST',
-                datatype: 'JSON',
+                datatype: 'jsonp',
                 url: "//karlisweb.me/api/webspace",
                 data: data,
-                success: function (response){
-                    response = JSON.parse(response);
+                beforeSend: function (){
+                    response = "Paldies ka sazinājāties ar mums. Atbildēsim tuvākajā laikā.";
                     $("#contact_form").hide();
                     ga('send', 'event', {eventCategory: 'CONTACTFORM', eventAction: 'SUCCESS'});
-                    $("#thanks").html(response.msg).fadeIn();
+                    $("#thanks").html(response).fadeIn();
                     setTimeout(function(){
                             $('#contactform-modal').modal('hide');
                     }, 3000);
