@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Kalkulators</title>
+    <style>
+        body {
+            font-size: 30px;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            vertical-align: middle;
+        }
 
+        input {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 140px;
+            margin-right: 10px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #1b995e;
+            background-color: #d7fdeb;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1>Svars</h1><br>
+    <input type="number" v-model="weight" v-on:change="calcWeight" step="1" min="1">kg
+    <h2>{{ result }}ml</h2>
+</div>
+</body>
+<script src="https://unpkg.com/vue@3.2.6/dist/vue.global.prod.js"></script>
+<script>
+    Vue.createApp({
+        data() {
+            return {
+                weight: 0,
+                stage1: 4,
+                stage2: 2,
+                result: 0
+            }
+        },
+        methods: {
+            calcWeight() {
+                if (this.weight <= 10) {
+                    this.result = this.weight * 4;
+                } else if (this.weight > 10 && this.weight <= 20) {
+                    var atlikusas_svars = this.weight - 10;
+                    var svars = this.weight - atlikusas_svars;
+                    var step1_svars = svars * this.stage1;
+                    var step2_svars = atlikusas_svars * this.stage2;
+                    this.result = step1_svars + step2_svars;
+                } else if (this.weight > 20) {
+                    step1_svars = 10 * this.stage1;
+                    step2_svars = 10 * this.stage2;
+                    atlikusas_svars = this.weight - 20;
+                    this.result = step1_svars + step2_svars + atlikusas_svars;
+                }
+            }
+        }
+    }).mount('#app');
+</script>
+</html>
